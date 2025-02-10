@@ -27,7 +27,8 @@
 </form>
     <p>
      <?php if(isset($_POST['letter'])) {
-        if(COUNT($_POST['letter']===1)) {
+        $count= count($_POST['letter'])
+        if($count===1) {
             echo 'jedna';
         } else {
             echo 'wiele';
