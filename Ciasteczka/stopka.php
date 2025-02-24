@@ -1,0 +1,1 @@
+<br><br><div style="border:2px solid #7886C7; height:40px; background-color: #7886C7; text-align:center; border-radius:10px">Stopka</div>
