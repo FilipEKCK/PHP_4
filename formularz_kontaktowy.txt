@@ -1,0 +1,9 @@
+2025-03-10 14:30:09
+ Array
+(
+    [full_name] => Filip Smorąg
+    [email] => filipsmorag@gmail.com
+    [age_range] => 50
+    [message_content] => FILIP SMEOAG HASDHSADJAD A DASA
+    [consent] => true
+)

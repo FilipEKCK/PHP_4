@@ -11,13 +11,7 @@
     <?php include 'menu.php'; ?>
     <br>
     <H1>Strona tylko dla zalogowanych</H1>
-   <?php if (isset($_SESSION['login_status'])){
-        include 'print_r.php';
-    }
-    else {
-        ?><p>Nie jesteś zalogowany, wróć na ta strone po logowaniu by wyświetlić zawartość</p> <?php 
-    }
-    ?>
+   
     
 </body>
 </html>
