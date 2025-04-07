@@ -20,9 +20,10 @@
     $query = "Select upper(concat(imie, ' ', nazwisko)) as Pracownicy from pracownicy";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) > 0) {
+        ?><ul><?php
          while ($sql=mysqli_fetch_assoc($result)) {
-         ?><p><?= $sql['Pracownicy']?></p> 
-         <?php }
+         ?><li><?= $sql['Pracownicy']?></li> 
+         <?php } ?><ul><?php
     } else {
         echo "Brak wyników";
     }
