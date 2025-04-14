@@ -48,7 +48,7 @@
                         <td><?= $sql['autor'] ?></td>
                         <td><?= $sql['wydawnictwo'] ?></td>
                         <td><?= $sql['rok_wyd'] ?></td>
-                        <td><?php list($zlote, $grosze) = explode('.', $sql['cena']); echo $zlote . " zł " . $grosze . " gr " ?></td>
+                        <td style="text-align:right"><?php list($zlote, $grosze) = explode('.', $sql['cena']); echo $zlote . " zł " . $grosze . " gr " ?></td>
                         
                         
                     </tr><?php

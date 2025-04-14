@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  
+}
+
+.left {
+  width: 25%;
+  background-color:#27391C;
+  color:whitesmoke;
+
+}
+
+.right {
+  width: 75%;
+  background-color: #1F7D53;
+  color:black;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+a:hover{
+  background-color: orange;
+  color:black;
+}
+a{
+  color:white;
+  text-decoration: none;
+  display:block;
+  width:100%;
+  padding:10px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Two Unequal Columns</h2>
+
+<div class="row">
+  <div class="column left" >
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+    <a class="link" href="">link 1</a>
+    <a class="link" href="">link 2</a>
+  </div>
+  <div class="column right" >
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+</body>
+</html>
