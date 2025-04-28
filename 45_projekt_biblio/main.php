@@ -4,20 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
-  box-sizing: border-box;
+  box-sizing: border-box;  
+}
+body{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 .column {
-  float: left;
+  
   padding: 10px;
 }
+.row {
+  display:flex;
+  min-height:480px;
+}
+
 .left {
-  width: 15%;
-  background-color:#27391C;
+  width: 25%;
+  background-color:#626F47;
   color:whitesmoke;
+  
 }
 .right {
-  width: 85%;
-  background-color: #255F38;
+  width: 75%;
+  background-color: #A4B465;
   color:black;
 }
 
@@ -27,7 +36,7 @@
   clear: both;
 }
 a:hover{
-  background-color: orange;
+  background-color: #F5ECD5;
   color:black;
 }
 a{
@@ -36,25 +45,48 @@ a{
   display:block;
   width:100%;
   padding:10px;
+  font-size:larger;
 }
-
+.active {
+  background-color:#F0BB78;
+  color:black;
+}
+table.small{
+  border-collapse:collapse;
+  font-size:85%
+}
+table {
+  border-collapse:collapse;
+  font-size:100%;
+  width:80%;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+td,th {
+  Border:solid 1px black;
+  Padding:2px;
+  
+  
+  
+}
 </style>
 </head>
 <body>
 <?php require 'db/login.php'; ?>
 
-<h2>Two Unequal Columns</h2>
+
 
 <div class="row">
-  <div class="column left" >
-    <h2>Column 1</h2>
-    <a class="link" href="?page=pracownicy">link 1</a>
-    <a class="link" href="?page=niemotko">link 2</a>
-    <a class="link" href="?halo=halo">link 3</a>
-    <a class="link" href="">link 4</a>
-    <a class="link" href="">link 5</a>
-  </div>
-  <div class="column right" >
+  <nav class="column left" >
+    
+    <a class="<?= ($_GET['page'] ?? '') == 'glowna' ? 'active' : '' ?>" href="?page=glowna">Strona <i>główna</i></a>
+    <a class="<?= ($_GET['page'] ?? '') == 'czytelnicy' ? 'active' : '' ?>" href="?page=czytelnicy">Tabela <i>czytelnicy</i></a>
+    <a class="<?= ($_GET['page'] ?? '') == 'dzialy' ? 'active' : '' ?>" href="?page=dzialy">Tabela <i>działy</i></a>
+    <a class="<?= ($_GET['page'] ?? '') == 'ksiazki' ? 'active' : '' ?>" href="?page=ksiazki">Tabela <i>książki</i></a>
+    <a class="<?= ($_GET['page'] ?? '') == 'pracownicy' ? 'active' : '' ?>" href="?page=pracownicy">Tabela <i>pracownicy</i></a>
+    <a class="<?= ($_GET['page'] ?? '') == 'stanowiska' ? 'active' : '' ?>" href="?page=stanowiska">Tabela <i>stanowiska</i></a>
+    <a class="<?= ($_GET['page'] ?? '') == 'wypozyczenia' ? 'active' : '' ?>" href="?page=wypozyczenia">Tabela <i>wypożyczenia</i></a>
+</nav>
+  <main class="column right" >
     <?php
     if (isset($_GET['page'])){
       if (file_exists('pages/' . $_GET['page'] . '.php')){
@@ -66,7 +98,7 @@ a{
       include 'pages/glowna.php';
     }
     ?>
-  </div>
+  </main>
 </div>
 <?php require 'db/logout.php'; ?>
 </body>

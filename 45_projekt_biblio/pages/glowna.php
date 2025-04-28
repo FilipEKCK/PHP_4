@@ -1,1 +1,1 @@
-<h1>Glowna</h1>
+<h1>Główka</h1>
