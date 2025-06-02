@@ -1,6 +1,6 @@
 <h1>Wypożyczenia</h1>
 <?php
-$query = "select * from wypozyczenia inner join pracownicy on wypozyczenia.Id_pracownika=pracownicy.Id_pracownika inner join ksiazki on wypozyczenia.Sygnatura=ksiazki.Sygnatura inner join czytelnicy on wypozyczenia.Nr_czytelnika=czytelnicy.Nr_czytelnika";
+$query = "select * from wypozyczenia inner join pracownicy on wypozyczenia.Id_pracownika=pracownicy.Id_pracownika inner join ksiazki on wypozyczenia.Sygnatura=ksiazki.Sygnatura inner join czytelnicy on wypozyczenia.Nr_czytelnika=czytelnicy.Nr_czytelnika order by Nr_transakcji";
 $result = mysqli_query($conn, $query); ?>
 <p>Tabela wypożyczenia zawiera <?= mysqli_num_rows($result) ?> rekordów</p>
 <?php
@@ -20,9 +20,9 @@ if (mysqli_num_rows($result) > 0) {
             ?>
             <tr>
                 <td><?= $sql['Nr_transakcji'] ?></td>
-                <td><?= $sql['Tytul'] ?></td>
-                <td><?= $sql['pracownicy.Nazwisko'] tu naprawić  ?></td>
-                <td><?= $sql['Nazwisko'] ?></td>
+                <td><?= $sql['Sygnatura'] ?></td>
+                <td><?= $sql['Id_pracownika']?></td>
+                <td><?= $sql['Nr_czytelnika'] ?></td>
                 <td><?= $sql['Data_wypozyczenia'] ?></td>
                 <td><?= $sql['Data_zwrotu'] ?></td>
        <?php
