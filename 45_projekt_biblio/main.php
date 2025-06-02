@@ -63,10 +63,17 @@ table {
 }
 td,th {
   Border:solid 1px black;
-  Padding:2px;
-  
-  
-  
+  Padding:2px; 
+}
+table.dodaj {
+  width:30%;
+
+}
+input#nazwa{
+  width:100%;
+}
+td.button{
+  text-align:center;
 }
 </style>
 </head>
